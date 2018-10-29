@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<?php icnlude ('app.php'); ?>
+    <?php include ('app.php'); ?>
 </head>
 
 <body>
