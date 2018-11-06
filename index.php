@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-<?php include 'head.php'?>
+<?php include ('app.php'); ?>
   
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
   <!--banner-->
-  <?php include 'header.php'?>
+  <?php include ('header.php'); ?>
   <!--/ service-->
   <!--cta-->
   <section id="cta-1" class="section-padding">
@@ -235,11 +235,11 @@
         <div class="col-md-4 col-sm-4">
           <h3>Contact Info</h3>
           <div class="space"></div>
-          <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>321 Awesome Street<br> New York, NY 17022</p>
+          <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>Bashundhara, Dhaka-1229, Bangladesh </p>
           <div class="space"></div>
-          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@companyname.com</p>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@northsouth.edu</p>
           <div class="space"></div>
-          <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+1 800 123 1234</p>
+          <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+88 800 123 1234</p>
         </div>
         <div class="col-md-8 col-sm-8 marb20">
           <div class="contact-info">
@@ -276,7 +276,7 @@
   </section>
   <!--/ contact-->
   <!--footer-->
-  <?php include 'footer.php'?>
+  <?php include ('footer.php'); ?>
   <!--/ footer-->
 
   <script src="js/jquery.min.js"></script>

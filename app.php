@@ -1,7 +1,7 @@
 <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Smart Health Care</title>
- <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+ <title>Pregomen</title>
+ <meta name="description" content="A website for Pregenent women health care">
  <meta name="keywords" content=" a
 system that will help pregnant women to do regular checkup without going anywhere and
 anyone’s help">
