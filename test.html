@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	
+    <title>Firebase example</title>
+  </head>
+  <body>
+    <!-- <h1>Firebase example</h1> -->
+    <h1 id="bigOne"></h1>
+
+    <script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAFnq-YrY7MYOHrIKm5LR3IHl-8lFPSWpI",
+	    authDomain: "cse499healthmanagement.firebaseapp.com",
+	    databaseURL: "https://cse499healthmanagement.firebaseio.com",
+	    projectId: "cse499healthmanagement",
+	    storageBucket: "cse499healthmanagement.appspot.com",
+	    messagingSenderId: "638987735704"
+	  };
+	  firebase.initializeApp(config);
+
+	  // var data=document.getElementById('data');
+   //  var dbRef= firebase.database().ref().child('text');
+   //  dbRef.on('value',snap=>data.innerText=snap.val
+	   var bigOne=document.getElementById('bigOne');
+	   var dbRef=firebase.database().ref().child('text');
+	   dbRef.on('value', snap=>bigOne.innerText=snap.val());
+	</script>
+
+   
+  </body>
+</html>

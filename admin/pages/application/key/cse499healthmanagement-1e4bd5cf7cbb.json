@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cse499healthmanagement",
+  "private_key_id": "1e4bd5cf7cbbd1b4afbde494f8b3c116893e66b0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrEJ3qvlMh44S2\n5msj6FQHQbCjA8nB+ySEK9F9IWuR5y/0q2CRqBOdBCyzJ/OFIWJgU+Li17XG2P7T\nm1BGaY8M1xv2k8U/NtW95TBjoFlT2wE+wgNt7dX907ZcuLadX2dqgofRjXnJ6R6R\nPKR412eNbr1chRnBDvlp7wwmKPhUYDMbr/1xfVsmO4SM4SFoiqiZqp1ob98VAUqV\nmlT96d8sRgLl3NdNSP4QOQv7oJ4wjCfQKFFVWixhjmWViI+9JDUJmvOuMuXOJkOP\nlDLNHETrNkSb5gq40MQPx+9QyUE/3G37gSd6hIsnUDjW9F5XUMJnUTl0Yzf5BoFt\n47KEvilHAgMBAAECggEAA97p/GLhk3r/iLYWCTZ/y/xfNCqxgpBMf8NDZbX7FSP1\nQqK0gLDX3IEnrYLrx/x4mWTdmfPl/iXfpKmZbHowD4baRYetqVDJZNLhd9LWoYse\njfXIkdDAKk5ye0HTzM57CnHwnRWHxuOy+E1HP7oVYcQHc0lKZLISUAsQbBygrqxP\ntMOyYv/A1Q2SMiYxHIJ9ndxHDwGMPrPmy6oyn+SkD8mj2juIP+hZKnndPOuPXi7n\n4tmGqPg+2g6WrGLiFqDZs6l1ezzbdMRywavH9gwS0sWrmosZSlx+LgIdw4wJ5koj\nhyMz6bs6zCFRYgvLc0VxNxpUI2nGQ9A62+IP5XF2gQKBgQDtAJY+YoZBbuypDEU6\nIjRklsdAclPHw34oI1gKdQffe+XAT3fLDNW3++ow61NRprOfuXESd3Ma+cGi6M+F\nN9ai7iayykUO55WGg41CIALOQA71oB4PTSrX8YE+WIcXhQ68QfQwmVwXiwIFn46E\n54I7aw1eDdOF+GtvnJt5pdyTEQKBgQC4xvW1ncOpnrmOz33sm9ivBx5b+u5HDzJc\nYxSBamV7cubh2BnEQgEbJcjZ/AwEj6sDnpjgzQ8C1Ekc2ZF790jRdHJCv+TzNTWg\nI7YY6tOGPlV8VkeSzq79aPCNpmtkBbIU8JjpyE8fJ63gJCLXKHuUnBW5FITo4Md+\nBqlk08hG1wKBgDEOJwsAn6NZj1iqNoYC4G9VmiZnw5mciDdMoYOAl8GVRofYqwX3\nQSFU3jOD8fn7lEBiRNo6qTOTMJZEs/dyCFYvDwmAvmyIWLW/8vQV5h7EuZPzsWUf\nZtfNoB/EeSnQG62xxRZuF9azqhZ54Sj3NkiQLvMhz39yXOJ8Ot4iC5bRAoGAWoyF\nlH6/h7vUyvs7hlvJD9y5L/IEGqaD02pqfhEZsilYo4w29Eo0KI2Xo9s0OHf/IkLy\nQBe9J3HIcm7cMJe6A4rBA5zuIZENunBFqGhLSBn74naVlIfckSp/16qaLeXsov5U\nsRwMSgQz3QdYW3/nL6hdrNk1WLnuiP/SuypdlvkCgYB07+X2aGljhFiKgwRlnwbH\n7Ozq+RtSeTn0vNFgEdHa/X22apDKJyfTysRKI4EdglWAxZRLO3x/TjADSzZD1vqe\nVo0g06ehdVxmeli6rgO+hpXWdxWGHEomy1ZELCmaPAiLMpMTdJ3RuJPqINGCWfbT\nTDnsFiY9nehKqDA28I8VzQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cse499healthmanagement@appspot.gserviceaccount.com",
+  "client_id": "108048032053090187488",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cse499healthmanagement%40appspot.gserviceaccount.com"
+}
