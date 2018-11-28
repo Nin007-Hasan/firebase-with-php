@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "users": {
+        ".read": true,
+        ".write":true,
+    },
+      "doctors": {
+        ".read": true,
+        ".write": true,
+    },
+      "hospitals": {
+        ".read": true,
+        ".write": false,
+    }
+  }
+}
