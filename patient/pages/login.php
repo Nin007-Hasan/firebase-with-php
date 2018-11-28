@@ -11,12 +11,12 @@
 	    <input type="email" placeholder="Email..." id="email_field" />
 	    <input type="password" placeholder="Password..." id="password_field" />
 
-	    <button onclick="login()">Login to Account</button>
+	    <a href="index.php"><button onclick="login()">Login to Account</button></a>
 	</div>
 
 	  <div id="user_div" class="loggedin-div">
 	    <h3>Welcome User</h3>
-	    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+	    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p></a>
 	    <button onclick="logout()">Logout</button>
 	  </div>
 	

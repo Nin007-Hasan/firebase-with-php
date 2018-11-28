@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,9 +22,30 @@
                     <h1 class="page-header">Dashboard</h1>
                 </div>
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-12">
-                    <a href="add_doctor.php">Add New Doctor</a>
-                </div>
+            </div>
+            <div class="container">
+                <form action="insert_doctor.php" method="POST">
+                  <input type="text" name="designation" value="designation">
+                  <br><br>
+                  <input type="text" name="doctor_email" value="doctor_email">
+                  <br><br>
+                  <input type="text" name="doctor_id" value="doctor_id">
+                  <br><br>
+                  <input type="text" name="doctor_phone" value="doctor_phone">
+                  <br><br>
+                  <input type="text" name="hospital_id" value="hospital_id">
+                  <br><br>
+                  <input type="text" name="isApproved" value="isApproved">
+                  <br><br>
+                  <input type="text" name="name" value="name">
+                  <br><br>
+                  <input type="text" name="specialization" value="specialization">
+                  <br><br>
+                  <input type="text" name="token" value="token">
+                  <br><br>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form> 
             </div>
             <!-- /.row -->
             

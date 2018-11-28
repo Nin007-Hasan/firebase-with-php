@@ -1,3 +1,12 @@
+<?php 
+    require("config.php"); 
+
+    $sql="SELECT * FROM doctor_profile";
+    // $sql="SELECT zilla.zilla_id, upzilla.upzilla_id, village.village_id FROM upzilla
+    // zilla on zilla.zilla_id=up";
+    $result=mysqli_query($con,$sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,6 +131,34 @@
             <!-- /.row -->
             <div class="row">
                 <table width="100%" class="table table-striped table-bordered table-hover" id="div_output">
+                    
+                </table>
+                <table class="table table-striped table-bordered table-hover">
+                <?php
+            if (mysqli_num_rows($result)>0) {
+                # code...
+                while ($row=mysqli_fetch_array($result)) {
+                ?>
+                    <tr>
+                            <td><?php echo $row["designation"]; ?></td>
+                            <td><?php echo $row["doctor_email"];?></td>
+                            <td><?php echo $row["doctor_id"]; ?></td>
+                            <td><?php echo $row["doctor_phone"]; ?></td>
+                            <td><?php echo $row["hospital_id"]; ?></td>
+                            <td><?php echo $row["isApproved"]; ?></td>
+                            <td><?php echo $row["name"]; ?></td>
+                            <td><?php echo $row["specialization"]; ?></td>
+                            <td><?php echo $row["token"]; ?></td>
+
+                    </tr>
+                    <?php
+
+                }
+                
+            }
+        ?>
+        
+        <?php  ?>
                     
                 </table>
                 <!-- <div id="div_output">
