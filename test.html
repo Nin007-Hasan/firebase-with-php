@@ -1,39 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title></title>
-	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  	<link rel="stylesheet" href="style.css" />
+    <?php include ('app.php'); ?>
+
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+
+    
 </head>
+
 <body>
-	<div id="login_div" class="main-div">
-	    <h3>Firebase Web login Example</h3>
-	    <input type="email" placeholder="Email..." id="email_field" />
-	    <input type="password" placeholder="Password..." id="password_field" />
 
-	    <a href="facebook.com" target="_blank"><button onclick="login()">Login to Account</button></a>
-	</div>
+    <div id="wrapper">
 
-	  <div id="user_div" class="loggedin-div">
-	    <h3>Welcome User</h3>
-	    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-	    <button onclick="logout()">Logout</button>
-	  </div>
-	
-	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyAFnq-YrY7MYOHrIKm5LR3IHl-8lFPSWpI",
-	    authDomain: "cse499healthmanagement.firebaseapp.com",
-	    databaseURL: "https://cse499healthmanagement.firebaseio.com",
-	    projectId: "cse499healthmanagement",
-	    storageBucket: "cse499healthmanagement.appspot.com",
-	    messagingSenderId: "638987735704"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-	<script src="index.js"></script>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <?php include ('header.php'); ?>
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Add Doctor</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="container">
+                <form >
+                  <input type="text" value=""  id="designation" > 
+                  <br><br>
+                  <input type="text" value="doctor_email" id="doctor_email">
+                  <br><br>
+                  <input type="text" value="doctor_id" id="doctor_id">
+                  <br><br>
+                  <input type="text" value="doctor_phone" id="doctor_phone">
+                  <br><br>
+                  <input type="text" value="hospital_id" id="hospital_id">
+                  <br><br>
+                  <input type="text" value="isApproved" id="isApproved">
+                  <br><br>
+                  <input type="text" value="name" id="name">
+                  <br><br>
+                  <input type="text" value="specialization" id="specialization">
+                  <br><br>
+                  <input type="text" value="token" id="token">
+                  <br><br>
+                  <br><br>
+                  <input type="submit" id="Submit" onclick="add()">
+                </form> 
+            </div>
+            <!-- /.row -->
+            
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <script>
+      // Initialize Firebase
+      var designation;
+
+      var config = {
+        apiKey: "AIzaSyAFnq-YrY7MYOHrIKm5LR3IHl-8lFPSWpI",
+        authDomain: "cse499healthmanagement.firebaseapp.com",
+        databaseURL: "https://cse499healthmanagement.firebaseio.com",
+        projectId: "cse499healthmanagement",
+        storageBucket: "cse499healthmanagement.appspot.com",
+        messagingSenderId: "638987735704"
+      };
+      firebase.initializeApp(config);
+
+      
+
+      function add(){
+        const fb_db = firebase.database().ref('doctors')
+        designation = document.getElementById("designation").value
+        doctor_email = document.getElementById("doctor_email").value
+        data = {designation,doctor_email}
+        fb_db.child('doctors/').push(data)
+    }
+      
+      
+    </script>
+    <!-- <script src="test.js"/> -->
+
+
+ 
 
 </body>
+
 </html>
