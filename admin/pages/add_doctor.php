@@ -48,7 +48,6 @@
                   <br><br>
                   <input type="text" placeholder="Token" id="token">
                   <br><br>
-                  <br><br>
                   <input type="submit" id="Submit" onclick="add()">
                 </form> 
             </div>
