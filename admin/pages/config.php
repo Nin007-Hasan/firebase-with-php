@@ -2,7 +2,7 @@
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="doctor";
+	$dbname="probal";
 
 	$con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 

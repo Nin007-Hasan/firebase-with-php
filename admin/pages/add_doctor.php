@@ -26,25 +26,27 @@
                 <!-- /.col-lg-12 -->
             </div>
             <div class="container">
-                <form >
-                  <input type="text" placeholder="Designation" id="designation" > 
+                <form action="insert_doctor.php" method="POST" >
+                  <input type="text" placeholder="Designation" id="designation" name="designation" > 
                   <br><br>
-                  <input type="text" placeholder="Doctor Email" id="doctor_email">
+                  <input type="text" placeholder="Doctor Email" id="doctor_email" name="doctor_email">
                   <br><br>
-                  <input type="text" placeholder="Doctor ID" id="doctor_id">
+                  <input type="text" placeholder="Doctor ID" id="doctor_id" name="doctor_id">
                   <br><br>
-                  <input type="text" placeholder="Doctor Phone" id="doctor_phone">
+                  <input type="text" placeholder="Doctor Phone" id="doctor_phone" name="doctor_phone">
                   <br><br>
-                  <input type="text" placeholder="Hospital Id" id="hospital_id">
+                  <input type="text" placeholder="Hospital Id" id="hospital_id" name="hospital_id">
                   <br><br>
-                  <select id="isApproved">
+                  <select id="isApproved" name="isApproved">
                     <option value="true">True</option>
                     <option value="false">False</option>
                   </select>
                   <br><br>
-                  <input type="text" placeholder="Doctor Name" id="name">
+                  <input type="text" placeholder="Doctor Name" id="name" name="name">
                   <br><br>
-                  <input type="text" placeholder="Doctor specialization" id="specialization">
+                  <input type="text" placeholder="Password" id="password" name="password">
+                  <br><br>
+                  <input type="text" placeholder="Doctor specialization" id="specialization" name="specialization">
                   <br><br>
                   <input type="text" placeholder="Token" id="token">
                   <br><br>

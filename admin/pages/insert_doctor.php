@@ -33,7 +33,12 @@
 	 	# code...
 	 	$specialization = $_POST['specialization'];
 	 }
-	$sql_Query= "INSERT INTO doctor_profile (designation,doctor_email,doctor_id,doctor_phone,hospital_id,isApproved,name,specialization) VALUES ('$designation','$doctor_email','$doctor_id','$doctor_phone','$hospital_id','$isApproved','$name','$specialization')";
+	 if (isset($_POST['password'])) {
+	 	# code...
+	 	$password = $_POST['password'];
+	 }
+
+	$sql_Query= "INSERT INTO doctor_profile (designation,doctor_email,doctor_id,doctor_phone,hospital_id,isApproved,name,password,specialization) VALUES ('$designation','$doctor_email','$doctor_id','$doctor_phone','$hospital_id','$isApproved','$name','$password','$specialization')";
 
 	 if(mysqli_query($con,$sql_Query)){
 
@@ -43,7 +48,7 @@
 	 }
 	 else{
 	 
-	 echo 'Try Again';
+	 echo mysql_error();
 	 
 	 }
 	 mysqli_close($con);

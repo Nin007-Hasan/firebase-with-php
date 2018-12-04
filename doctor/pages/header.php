@@ -27,7 +27,7 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="doctor.php"><i class="fa fa-table fa-fw"></i> Doctor List</a>
+                            <a href="doctor_profile.php"><i class="fa fa-table fa-fw"></i> Doctor Profile</a>
                         </li>
                         <li>
                             <a href="patient.php"><i class="fa fa-table fa-fw"></i> Patient List</a>

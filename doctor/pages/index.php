@@ -1,3 +1,17 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['doctor_email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +31,17 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">
+                        <?php  if (isset($_SESSION['doctor_email'])) : ?>
+                        <p>Welcome <strong><?php echo $_SESSION['doctor_email']; ?></strong></p>
+                            <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+                        <?php endif ?>
+                    </h1>
                 </div>
                 <!-- /.col-lg-12 -->
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                     <a href="add_doctor.php">Add New Doctor</a>
-                </div>
+                </div> -->
             </div>
             <!-- /.row -->
             
