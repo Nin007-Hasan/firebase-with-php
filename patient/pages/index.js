@@ -2,16 +2,14 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
+    document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
     if(user != null){
 
-
       var email_id = user.email;
-      //window.location.href="index.php";
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
     }
@@ -35,16 +33,7 @@ function login(){
     var errorCode = error.code;
     var errorMessage = error.message;
 
-    if (errorMessage==false) 
-    {
-      window.alert("Error : " + errorMessage);
-    }
-
-    else{
-      window.location.href = "index.php";
-    }
-
-    
+    window.alert("Error : " + errorMessage);
 
     // ...
   });

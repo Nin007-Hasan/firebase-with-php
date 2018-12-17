@@ -1,9 +1,64 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['doctor_email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+  }
+
+  include 'config.php';
+
+  $doctor_email= $_SESSION['doctor_email'];
+
+  $sql_Query= "SELECT * FROM doctor_profile WHERE doctor_email='$doctor_email' ";
+  $result = mysqli_query($con, $sql_Query);
+  
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include ('app.php'); ?>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAFnq-YrY7MYOHrIKm5LR3IHl-8lFPSWpI",
+        authDomain: "cse499healthmanagement.firebaseapp.com",
+        databaseURL: "https://cse499healthmanagement.firebaseio.com",
+        projectId: "cse499healthmanagement",
+        storageBucket: "cse499healthmanagement.appspot.com",
+        messagingSenderId: "638987735704"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+
+
+
+      var ref=database.ref('doctors');
+
+      var user = firebase.auth().currentUser;
+
+        if (user == "doc@doc.gov") {
+          user.providerData.forEach(function (profile) {
+            console.log("Sign-in provider: " + profile.providerId);
+            console.log("  Provider-specific UID: " + profile.uid);
+            console.log("  Name: " + profile.displayName);
+            console.log("  Email: " + profile.email);
+            console.log("  Photo URL: " + profile.photoURL);
+          });
+        }
+      
+    </script>
 </head>
+
 
 <body>
 
@@ -15,153 +70,45 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        Probal Pantho
-                                    </h5>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Doctor Profile</h1>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- /.col-lg-12 -->
+                <!-- <div class="col-lg-12">
+                    <a href="add_doctor.php">Add New Doctor</a>
+                </div> -->
+                <div class="page-wrapper" style="margin: 24px;">
+                    <div class="row">
+                        <?php
+                            if (mysqli_num_rows($result) > 0) 
+                            {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                ?>  
+                                    <h4>ID: <?php echo $row["doctor_id"]; ?></h4>
+                                    <h4>Name : <?php echo $row["name"]; ?></h4>
+                                    <h4>Designation: <?php echo $row["designation"]; ?></h4>
+                                    <h4>Specialization: <?php echo $row["specialization"]; ?></h4>
+                                    <h4>Hospital Name: <?php echo $row["hospital_id"]; ?></h4>
+                                    <h4>Email: <?php echo $row["doctor_email"]; ?></h4>
+                                    <h4>Phone: <?php echo $row["doctor_phone"]; ?></h4>
+                                    <h4>Password: <?php echo $row["password"]; ?></h4>
+
+                                <?php
+                                }
+                            }
+                        ?>
+                    <!-- <h4>Docotor Name: <?php echo $value->doctor_name; ?></h4>
+                    <h4>Doctor Email:</h4>
+                    <h4>Doctor Phone:</h4>
+                    <h4>Doctor Password:</h4> -->
                 </div>
-            </form>           
-        </div>
+                </div>
+                
+            </div>
+            <!-- /.row -->
+            
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

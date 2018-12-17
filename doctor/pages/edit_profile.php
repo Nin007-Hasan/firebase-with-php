@@ -80,25 +80,14 @@
                 </div> -->
                 <div class="page-wrapper" style="margin: 24px;">
                     <div class="row">
-                        <?php
-                            if (mysqli_num_rows($result) > 0) 
-                            {
-                                // output data of each row
-                                while($row = mysqli_fetch_assoc($result)) {
-                                ?>  
-                                    <h4>ID: <?php echo $row["doctor_id"]; ?></h4>
-                                    <h4>Name : <?php echo $row["name"]; ?></h4>
-                                    <h4>Designation: <?php echo $row["designation"]; ?></h4>
-                                    <h4>Specialization: <?php echo $row["specialization"]; ?></h4>
-                                    <h4>Hospital Name: <?php echo $row["hospital_id"]; ?></h4>
-                                    <h4>Email: <?php echo $row["doctor_email"]; ?></h4>
-                                    <h4>Phone: <?php echo $row["doctor_phone"]; ?></h4>
-                                    <h4>Password: <?php echo $row["password"]; ?></h4>
-
-                                <?php
-                                }
-                            }
-                        ?>
+                        <form method="POST" action="profile_edit.php">
+                            <input type="text" name="designation" placeholder="designation"><br><br>
+                            <input type="text" name="name" placeholder="Full Name"><br><br>
+                            <input type="text" name="specialization" placeholder="Specialization"><br><br>
+                            <input type="text" name="password" placeholder="Password"><br><br>
+                            <input type="submit" name="submit" placeholder="Save">
+                        </form>
+                        
                     <!-- <h4>Docotor Name: <?php echo $value->doctor_name; ?></h4>
                     <h4>Doctor Email:</h4>
                     <h4>Doctor Phone:</h4>
@@ -106,9 +95,7 @@
                 </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <a href="edit_profile.php"><Button>Edit Profile</Button></a>
-                    </div>
+                    
                 </div>
                 
             </div>
