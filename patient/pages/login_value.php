@@ -30,7 +30,7 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
     //$password = md5($password);
-    $query = "SELECT * FROM doctor_profile WHERE doctor_email='$username' AND password='$password'";
+    $query = "SELECT * FROM patient_profile WHERE patient_email='$username' AND patient_password='$password'";
     $results = mysqli_query($db, $query);
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['doctor_email'] = $username;

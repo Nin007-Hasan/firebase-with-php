@@ -15,7 +15,7 @@
 
   $doctor_email= $_SESSION['doctor_email'];
 
-  $sql_Query= "SELECT * FROM patient_profile WHERE patient_email='$doctor_email' ";
+  $sql_Query= "SELECT * FROM doctor_profile WHERE doctor_email='$doctor_email' ";
   $result = mysqli_query($con, $sql_Query);
   
 ?> 
@@ -80,23 +80,14 @@
                 </div> -->
                 <div class="page-wrapper" style="margin: 24px;">
                     <div class="row">
-                        <?php
-                            if (mysqli_num_rows($result) > 0) 
-                            {
-                                // output data of each row
-                                while($row = mysqli_fetch_assoc($result)) {
-                                ?>  
-                                    <h4>ID: <?php echo $row["patient_no"]; ?></h4>
-                                    <h4>Name : <?php echo $row["patient_name"]; ?></h4>
-                                    <h4>Designation: <?php echo $row["patient_phone"]; ?></h4>
-                                    <h4>Specialization: <?php echo $row["spouse_name"]; ?></h4>
-                                    <h4>Hospital Name: <?php echo $row["patient_age"]; ?></h4>
-                                    <h4>Password: <?php echo $row["patient_password"]; ?></h4>
-
-                                <?php
-                                }
-                            }
-                        ?>
+                        <form method="POST" action="profile_edit.php">
+                            <input type="text" name="designation" placeholder="Patinet Phone"><br><br>
+                            <input type="text" name="name" placeholder="Spouse Name"><br><br>
+                            <input type="text" name="specialization" placeholder="Patient Age"><br><br>
+                            <input type="text" name="password" placeholder="Password"><br><br>
+                            <input type="submit" name="submit" placeholder="Save">
+                        </form>
+                        
                     <!-- <h4>Docotor Name: <?php echo $value->doctor_name; ?></h4>
                     <h4>Doctor Email:</h4>
                     <h4>Doctor Phone:</h4>
@@ -104,9 +95,7 @@
                 </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <a href="edit_profile.php"><Button>Edit Profile</Button></a>
-                    </div>
+                    
                 </div>
                 
             </div>
