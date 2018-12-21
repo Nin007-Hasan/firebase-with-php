@@ -39,9 +39,9 @@
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
-                <!-- <div class="col-lg-12">
+                <div class="col-lg-12">
                     <a href="add_doctor.php">Add New Doctor</a>
-                </div> -->
+                </div>
             </div>
             <!-- /.row -->
             
