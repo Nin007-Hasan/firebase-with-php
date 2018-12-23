@@ -39,7 +39,11 @@
                     <?php 
                       while ($row=mysqli_fetch_array($result)):; ?>
                       <option value="<?php echo $row["name"]  ?>"><?php echo $row["name"];  ?></option>
-                  <?php endwhile; ?>
+                  <?php 
+                    // $designation= $row["designation"];
+                    // $doctor_email=$row["doctor_email"];
+                    // $doctor_phone=$row["doctor_phone"];
+                  endwhile; ?>
                 </select>
                   <br><br>
                   

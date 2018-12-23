@@ -1,4 +1,5 @@
 <?php 
+    include 'config.php';
   session_start(); 
 
   if (!isset($_SESSION['doctor_email'])) {
@@ -10,6 +11,11 @@
     unset($_SESSION['username']);
     header("location: login.php");
   }
+
+  $doctor_email=$_SESSION['doctor_email'];
+
+  $sql_Query= "SELECT * FROM doctor_add WHERE patient='$doctor_email' ";
+  $result = mysqli_query($con, $sql_Query);
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +47,18 @@
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-12">
                     <a href="add_doctor.php">Add New Doctor</a>
+
+                    <?php
+                            if (mysqli_num_rows($result) > 0) 
+                            {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                ?>  
+                                    <h4>Your Doctor: <?php echo $row["doctor"]; ?></h4>  
+                                <?php
+                                }
+                            }
+                        ?>
                 </div>
             </div>
             <!-- /.row -->
