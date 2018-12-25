@@ -81,7 +81,7 @@
                 <div class="page-wrapper" style="margin: 24px;">
                     <div class="row">
                         <form method="POST" action="profile_edit.php">
-                            <input type="text" name="designation" placeholder="Patinet Phone"><br><br>
+                            <input type="text" name="designation" placeholder="Patient Phone"><br><br>
                             <input type="text" name="name" placeholder="Spouse Name"><br><br>
                             <input type="text" name="specialization" placeholder="Patient Age"><br><br>
                             <input type="text" name="password" placeholder="Password"><br><br>
