@@ -1,3 +1,26 @@
+<?php 
+    include 'config.php';
+  session_start(); 
+
+  if (!isset($_SESSION['doctor_email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+  }
+
+  if (!isset($_SESSION['doctor_name'])) {
+    header('location: doctor.php');
+  }
+
+  $doctor_email=$_SESSION['doctor_email'];
+  $doctor_name=$_SESSION['doctor_name'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,12 +144,11 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <table width="100%" class="table table-striped table-bordered table-hover" id="div_output">
-                    
-                </table>
-                <!-- <div id="div_output">
-                    
-                </div> -->
+                <iframe src="chart.html" style="height: 100%; width: 100%"></iframe>
+            </div>
+            <div>
+                <?php echo "$doctor_email"; ?> <br>
+                <?php echo "$doctor_name"; ?>
             </div>
                 
             <!-- /.row -->

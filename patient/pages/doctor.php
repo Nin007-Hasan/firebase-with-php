@@ -25,6 +25,7 @@
 	 if(mysqli_query($con,$sql_Query)){
 
 	 	header("Location: index.php");
+	 	$_SESSION['doctor_name'] = $zilla_code;
 		die();
 	 
 	 }

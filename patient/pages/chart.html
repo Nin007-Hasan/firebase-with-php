@@ -1,0 +1,45 @@
+<?php
+
+?>
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "BG LEVEL BAR CHART"
+	},
+	axisY: {
+		title: "BG LEVEL"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Day",
+		dataPoints: [      
+			{ y: 125, label: "14-11-2018-02-55-0" },
+			{ y: 139,  label: "14-11-2018-03-20-12" },
+			{ y: 139,  label: "15-11-2018-03-20-12" },
+			{ y: 128,  label: "15-11-2018-03-20-12" },
+			{ y: 133,  label: "17-11-2018-03-20-12" },
+			{ y: 130, label: "17-11-2018-03-20-12" },
+			{ y: 126,  label: "18-11-2018-03-20-12" },
+			{ y: 132,  label: "19-11-2018-03-20-12" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 200px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
