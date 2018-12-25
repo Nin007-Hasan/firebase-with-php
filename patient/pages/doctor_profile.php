@@ -72,7 +72,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Doctor Profile</h1>
+                    <h1 class="page-header">Patient Profile</h1>
                 </div>
                 <!-- /.col-lg-12 -->
                 <!-- <div class="col-lg-12">
@@ -88,9 +88,9 @@
                                 ?>  
                                     <h4>ID: <?php echo $row["patient_no"]; ?></h4>
                                     <h4>Name : <?php echo $row["patient_name"]; ?></h4>
-                                    <h4>Designation: <?php echo $row["patient_phone"]; ?></h4>
-                                    <h4>Specialization: <?php echo $row["spouse_name"]; ?></h4>
-                                    <h4>Hospital Name: <?php echo $row["patient_age"]; ?></h4>
+                                    <h4>Phone: <?php echo $row["patient_phone"]; ?></h4>
+                                    <h4>Spouse: <?php echo $row["spouse_name"]; ?></h4>
+                                    <h4>Age: <?php echo $row["patient_age"]; ?></h4>
                                     <h4>Password: <?php echo $row["patient_password"]; ?></h4>
 
                                 <?php
