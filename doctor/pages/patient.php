@@ -1,3 +1,29 @@
+<?php 
+    include 'config.php';
+  session_start(); 
+
+  if (!isset($_SESSION['doctor_email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+  }
+
+  if (!isset($_SESSION['doctor_name'])) {
+    header('location: doctor.php');
+  }
+
+  $doctor_email=$_SESSION['doctor_email'];
+  $doctor_name=$_SESSION['doctor_name'];
+
+  $sql_Query= "SELECT * FROM comment ";
+  $result = mysqli_query($con, $sql_Query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,18 +141,34 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Patient List</h1>
+                    <h1 class="page-header">Feedback</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <table width="100%" class="table table-striped table-bordered table-hover" id="div_output">
-                    
-                </table>
-                <!-- <div id="div_output">
-                    
-                </div> -->
+                <iframe src="chart.html" style="height: 100%; width: 100%"></iframe>
+            </div>
+            <div>
+                <h4>Write Your Comment</h4><br>
+                <form action="post.php" method="post">
+                    <input type="text" name="comment">
+                    <input type="submit" name="submit">
+                </form>
+                <div>
+                    <?php
+                            if (mysqli_num_rows($result) > 0) 
+                            {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                ?>  
+                                    <h4><?php echo $row["email"]?>: <?php echo $row["comment"]; ?></h4>  
+                                <?php
+                                }
+                            }
+                        ?>
+                </div>
+                
             </div>
                 
             <!-- /.row -->

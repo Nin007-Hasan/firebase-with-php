@@ -1,51 +1,45 @@
-<!DOCTYPE html>
+<?php
+
+?>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<title></title>
-	<style type="text/css">
-		html, body, #container {
-		  width: 100%;
-		  height: 100%;
-		  margin: 0;
-		  padding: 0;
-		}
-	</style>
-	<script type="text/javascript">
-		anychart.onDocumentReady(function() {
+<head>  
+<script>
+window.onload = function () {
 
-	  // set the data
-	  var data = {
-	    header: ["Name", "Death toll"],
-	    rows: [
-	      ["San-Francisco (1906)", 1500],
-	      ["Messina (1908)", 87000],
-	      ["Ashgabat (1948)", 175000],
-	      ["Chile (1960)", 10000],
-	      ["Tian Shan (1976)", 242000],
-	      ["Armenia (1988)", 25000],
-	      ["Iran (1990)", 50000]
-	  ]};
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "BG LEVEL BAR CHART"
+	},
+	axisY: {
+		title: "BG LEVEL"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Day",
+		dataPoints: [      
+			{ y: 125, label: "14-11-2018-02-55-0" },
+			{ y: 139,  label: "14-11-2018-03-20-12" },
+			{ y: 139,  label: "15-11-2018-03-20-12" },
+			{ y: 128,  label: "15-11-2018-03-20-12" },
+			{ y: 133,  label: "17-11-2018-03-20-12" },
+			{ y: 130, label: "17-11-2018-03-20-12" },
+			{ y: 126,  label: "18-11-2018-03-20-12" },
+			{ y: 132,  label: "19-11-2018-03-20-12" }
+		]
+	}]
+});
+chart.render();
 
-	  // create the chart
-	  var chart = anychart.column();
-
-	  // add data
-	  chart.data(data);
-
-	  // set the chart title
-	  chart.title("The deadliest earthquakes in the XXth century");
-
-	  // draw
-	  chart.container("container");
-	  chart.draw();
-	});
-	</script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
-
+}
+</script>
 </head>
-
 <body>
-	<div id="container"></div>
-
+<div id="chartContainer" style="height: 200px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
