@@ -33,7 +33,6 @@
             </div>
             <div class="banner-text text-center">
               <h1 class="white">Healthcare at your desk!!</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#contact" class="btn btn-appoint">Make an Appointment.</a>
             </div>
             <div class="overlay-detail text-center">
